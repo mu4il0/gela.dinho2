@@ -4,18 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Geladinhos Gourmet</title>
+  <title>Geladinhos Gourmet da Fran</title>
   <style>
     /* Estilos CSS para a página */
     body,
+
     html {
-      font-family: Arial, sans-serif;
+      background-image: url("geladinhos.jpg");
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bolder;
       margin: 0;
       padding: 0;
-      background-color: #09b9ff;
+      background-color: #000000;
       display: flex;
       flex-direction: column;
       max-height: 100vh;
+    }
+
+    #listaPedidos {
+      font-weight: bolder;
+      background-color: #B0E0E6;
     }
 
     header {
@@ -165,31 +173,91 @@
   </header>
   <div class="container">
     <div class="geladinho">
-      <img src="geladinho_morango.jpg" alt="Geladinho 1">
+      <img src="morango.jpg" alt="Geladinho 1">
       <div class="info">
         <h2>Geladinho de Morango</h2>
-        <p>Delicioso geladinho feito com morangos frescos.</p>
+        <p>Delicioso geladinho feito com Morangos frescos.</p>
         <p class="valor">R$ 5,00</p>
       </div>
-      <div class="btn" data-sabor="morango"></div>
+      <div class="btn" data-sabor="Morango"></div>
     </div>
     <div class="geladinho">
       <img src="Geladinho-de-Coco-com-Leite-Condensado.jpeg" alt="Geladinho 2">
       <div class="info">
         <h2>Geladinho de Coco</h2>
-        <p>Geladinho cremoso com sabor tropical de coco.</p>
+        <p>Geladinho cremoso com sabor tropical de Coco.</p>
         <p class="valor">R$ 5,00</p>
       </div>
-      <div class="btn" data-sabor="coco"></div>
+      <div class="btn" data-sabor="Coco"></div>
     </div>
     <div class="geladinho">
       <img src="maracujá.jpg" alt="Geladinho 3">
       <div class="info">
-        <h2>Geladinho de maracujá</h2>
-        <p>Geladinho cremoso com sabor tropical de maracujá.</p>
+        <h2>Geladinho de Maracujá</h2>
+        <p>Geladinho cremoso com sabor tropical de Maracujá.</p>
         <p class="valor">R$ 5,00</p>
       </div>
-      <div class="btn" data-sabor="maracujá"></div>
+      <div class="btn" data-sabor="Maracujá"></div>
+    </div>
+
+    <div class="geladinho">
+      <img src="nutella.jpg" alt="Geladinho 4">
+      <div class="info">
+        <h2>Geladinho de Nutella</h2>
+        <p>Geladinho cremoso com sabor de Nutella.</p>
+        <p class="valor">R$ 5,00</p>
+      </div>
+      <div class="btn" data-sabor="Nutella"></div>
+    </div>
+
+    <div class="geladinho">
+      <img src="nutella_com_morango.jpg" alt="Geladinho 5">
+      <div class="info">
+        <h2>Geladinho de Nutella com Morango </h2>
+        <p>Geladinho cremoso com sabor de Nutella com Morango.</p>
+        <p class="valor">R$ 5,00</p>
+      </div>
+      <div class="btn" data-sabor="Nutella com Morango"></div>
+    </div>
+
+    <div class="geladinho">
+      <img src="nutella_com_maracujá.jpg" alt="Geladinho 6">
+      <div class="info">
+        <h2>Geladinho de Nutella com Maracujá</h2>
+        <p>Geladinho cremoso com sabor de Nutella com Maracujá.</p>
+        <p class="valor">R$ 5,00</p>
+      </div>
+      <div class="btn" data-sabor="Nutella_com_Maracujá"></div>
+    </div>
+
+    <div class="geladinho">
+      <img src="negresco.jpg" alt="Geladinho 7">
+      <div class="info">
+        <h2>Geladinho de Negresco</h2>
+        <p>Geladinho cremoso com sabor de Negresco.</p>
+        <p class="valor">R$ 5,00</p>
+      </div>
+      <div class="btn" data-sabor="Negresco"></div>
+    </div>
+
+    <div class="geladinho">
+      <img src="abacaxi.jpg" alt="Geladinho 8">
+      <div class="info">
+        <h2>Geladinho de Abacaxi</h2>
+        <p>Geladinho cremoso com sabor tropical de Abacaxi.</p>
+        <p class="valor">R$ 5,00</p>
+      </div>
+      <div class="btn" data-sabor="Abacaxi"></div>
+    </div>
+
+    <div class="geladinho">
+      <img src="goiabada.jpg" alt="Geladinho 9">
+      <div class="info">
+        <h2>Geladinho de Goiabada</h2>
+        <p>Geladinho cremoso com sabor Goiabada.</p>
+        <p class="valor">R$ 5,00</p>
+      </div>
+      <div class="btn" data-sabor="Goiabada"></div>
     </div>
     <!-- Div para exibir a lista de pedidos -->
     <hr>
@@ -286,7 +354,8 @@
       // Monta a mensagem com a lista de pedidos
       const nome = document.getElementById('nome').value;
       const telefone = document.getElementById('phone').value;
-      let mensagem = `Nome: ${nome}\nTelefone: ${telefone}\n\n`;
+      const pedido = document.getElementById('pedido').value;
+      let mensagem = `Nome: ${nome}\nTelefone: ${telefone}\nPedido: ${pedido}\n\n`;
       mensagem += 'Lista de Pedidos:\n\n';
       for (const pedido of listaPedidos) {
         mensagem += `Sabor: ${pedido.sabor}\nQuantidade: ${pedido.quantidade}\n\n`;
